@@ -24,7 +24,7 @@ class EdiTest {
 
     @BeforeAll
     static void setupClass() {
-        WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().driverVersion("108.0.5359").setup();
     }
 
     @BeforeEach
