@@ -26,7 +26,7 @@ class EdiTest {
 
     @BeforeAll
     static void setupClass() {
-        WebDriverManager.edgedriver().driverVersion("108.0.1462").setup();
+        WebDriverManager.edgedriver().proxy("de001-surf.zone2.proxy.allianz:8080").setup();
     }
 
     @BeforeEach
