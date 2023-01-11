@@ -12,6 +12,8 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.slf4j.Logger;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -24,14 +26,14 @@ class EdiTest {
 
     @BeforeAll
     static void setupClass() {
-        WebDriverManager.chromedriver().driverVersion("107.0.5304.18").setup();
+        WebDriverManager.edgedriver().driverVersion("108.0.1462").setup();
     }
 
     @BeforeEach
     void setup() {
-        ChromeOptions options = new ChromeOptions();
+        EdgeOptions options = new EdgeOptions();
         options.addArguments("headless");
-        driver = new ChromeDriver(options);
+        driver = new EdgeDriver(options);
     }
 
     @AfterEach
