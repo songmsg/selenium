@@ -14,6 +14,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.slf4j.Logger;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -26,14 +28,14 @@ class EdiTest {
 
     @BeforeAll
     static void setupClass() {
-        WebDriverManager.edgedriver().proxy("de001-surf.zone2.proxy.allianz:8080").setup();
+        WebDriverManager.firefoxdriver().proxy("de001-surf.zone2.proxy.allianz:8080").setup();
     }
 
     @BeforeEach
     void setup() {
-        EdgeOptions options = new EdgeOptions();
+        FirefoxOptions options = new FirefoxOptions();
         options.addArguments("headless");
-        driver = new EdgeDriver(options);
+        driver = new FirefoxDriver(options);
     }
 
     @AfterEach
